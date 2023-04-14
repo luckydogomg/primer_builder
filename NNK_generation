@@ -1,0 +1,18 @@
+# N = A/C/G/T; B = C/G/T; K =G/T; S = G/C
+def NNK_generator(NNX):
+    baselist_N = list("ATGC")
+    baselist_K = list("TG")
+    baselist_B = list("CGT")
+    baselist_S = list("CG")
+    NN = [random.choice(baselist_N) for i in range(2)]
+    codon_NN = ''.join(NN)
+    K = random.choice(baselist_K)
+    B = random.choice(baselist_B)
+    S = random.choice(baselist_S)
+    if NNX == 'NNK':
+        codon_NNX = codon_NN+K
+    elif NNX == 'NNB':
+        codon_NNX = codon_NN+B
+    elif NNX == 'NNS':
+        codon_NNX = codon_NN+S
+    return codon_NNX
